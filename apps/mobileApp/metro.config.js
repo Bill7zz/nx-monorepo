@@ -1,18 +1,12 @@
-const path = require('path');
 const { withNxMetro } = require('@nx/react-native');
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
-const { generate } = require('@storybook/react-native/scripts/generate');
 const {
   wrapWithReanimatedMetroConfig,
 } = require('react-native-reanimated/metro-config');
 
 const defaultConfig = getDefaultConfig(__dirname);
 const { assetExts, sourceExts } = defaultConfig.resolver;
-
-generate({
-  configPath: path.resolve(__dirname, './.rnstorybook'),
-});
 
 /**
  * Metro configuration
@@ -28,21 +22,15 @@ const customConfig = {
   resolver: {
     assetExts: assetExts.filter((ext) => ext !== 'svg'),
     sourceExts: [...sourceExts, 'cjs', 'mjs', 'svg'],
+    unstable_enablePackageExports: true,
   },
 };
 
-const storybookConfig = withStorybook(defaultConfig, {
-  // set to false to disable storybook specific settings
-  // you can use a env variable to toggle this
-  enabled: true,
-  useJs: true,
-  unstable_enablePackageExports: true,
-  unstable_enableSymlinks: true,
-  unstable_allowRequireContext: true,
-  configPath: path.resolve(__dirname, './.rnstorybook'),
-});
+const projectConfig = withStorybook(
+  wrapWithReanimatedMetroConfig(mergeConfig(defaultConfig, customConfig))
+);
 
-module.exports = withNxMetro(mergeConfig(wrapWithReanimatedMetroConfig(storybookConfig, customConfig)), {
+module.exports = withNxMetro(projectConfig, {
   // Change this to true to see debugging info.
   // Useful if you have issues resolving modules
   debug: false,
