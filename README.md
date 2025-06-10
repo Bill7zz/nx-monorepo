@@ -1,10 +1,67 @@
 # NxMonorepo
 
+## Storybook v9 Issue in Nx React Native Projects
+
+This repository serves as a reproduction for an issue with Storybook v9 in Nx React Native projects. The issue manifests as a Metro bundler error when trying to resolve the `tty` module.
+
+### Issue Description
+
+When running the React Native app with Storybook v9, the Metro bundler fails with the following error:
+
+```
+ERROR  Error: Cannot resolve tty
+    .../nx-monorepo/node_modules/@nx/react-native/plugins/metro-resolver.js:31:15
+```
+
+This appears to be a resolution issue between Metro bundler, Nx's React Native plugin, and Storybook v9's dependencies.
+
+### Environment
+
+- Nx: 21.1.3
+- React Native
+- Storybook: v9
+- Metro: v0.81.5
+
+### Reproduction Steps
+
+1. Clone the repository:
+
+```bash
+git clone [repository-url]
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Install iOS pods:
+
+```bash
+nx pod-install mobileApp
+```
+
+4. Run the iOS app:
+
+```bash
+nx run-ios mobileApp
+```
+
+5. Observe the error in the Metro bundler output:
+
+```
+ERROR  Error: Cannot resolve tty
+  .../nx-monorepo/node_modules/@nx/react-native/plugins/metro-resolver.js:31:15
+```
+
+---
+
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/react-native?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/react-native?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
 ## Run tasks
 
@@ -89,12 +146,13 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 Learn more:
 
-- [Learn more about this workspace setup](https://nx.dev/nx-api/react-native?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
+- [Learn more about this workspace setup](https://nx.dev/nx-api/react-native?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
 And join the Nx community:
+
 - [Discord](https://go.nx.dev/community)
 - [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)
