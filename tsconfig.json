@@ -5,6 +5,12 @@
   "references": [
     {
       "path": "./apps/nx-monorepo"
+    },
+    {
+      "path": "./mobileApp"
+    },
+    {
+      "path": "./components"
     }
   ]
 }

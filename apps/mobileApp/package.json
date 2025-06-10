@@ -1,0 +1,28 @@
+{
+  "name": "@nx-monorepo/mobileApp",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "*",
+    "@storybook/addon-ondevice-backgrounds": "*",
+    "@storybook/react-native": "*",
+    "@storybook/addon-ondevice-notes": "*",
+    "@storybook/addon-ondevice-controls": "*",
+    "@storybook/addon-ondevice-actions": "*",
+    "react-native": "*",
+    "@react-native/metro-config": "*",
+    "react-native-svg-transformer": "*",
+    "react": "*",
+    "react-dom": "*",
+    "vite": "*",
+    "@vitejs/plugin-react": "*",
+    "@nx/vite": "*",
+    "esbuild": "*",
+    "@storybook/react": "*",
+    "react-native-reanimated": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-safe-area-context": "*",
+    "@gorhom/bottom-sheet": "*"
+  },
+  "devDependencies": {}
+}
