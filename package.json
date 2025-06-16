@@ -33,7 +33,7 @@
     "@react-native-community/datetimepicker": "7.7.0",
     "@react-native-community/slider": "4.5.6",
     "@react-native/babel-preset": "~0.76.3",
-    "@react-native/metro-config": "~0.76.3",
+    "@react-native/metro-config": "~0.77.2",
     "@storybook/addon-ondevice-actions": "^9.0.6",
     "@storybook/addon-ondevice-backgrounds": "^9.0.6",
     "@storybook/addon-ondevice-controls": "^9.0.6",
