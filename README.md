@@ -17,10 +17,10 @@ This appears to be a resolution issue between Metro bundler, Nx's React Native p
 
 ### Environment
 
-- Nx: 21.1.3
+- Nx: 21.2.0
 - React Native
 - Storybook: v9
-- Metro: v0.81.5
+- metro-config": "~0.77.2",
 
 ### Reproduction Steps
 
